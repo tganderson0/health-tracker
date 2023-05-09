@@ -21,7 +21,7 @@ const generateBarData = (currentWaterMl, totalWaterMl) => [
 const data = generateBarData(1050, 3700);
 
 const valueFormatter = (number) =>
-  `${Intl.NumberFormat("us").format(number).toString()} mL`;
+  `${Intl.NumberFormat("us").format(number).toString()} fl oz`;
 
 export default function WaterCard() {
   return (
@@ -29,11 +29,11 @@ export default function WaterCard() {
       <Flex alignItems="start">
         <div>
           <Text>Water</Text>
-          <Metric>1050 mL</Metric>
+          <Metric>1050 fl oz</Metric>
         </div>
       </Flex>
       <Flex className="mt-4">
-        <Text className="truncate">Goal: 3700 mL</Text>
+        <Text className="truncate">Goal: 3700 fl oz</Text>
       </Flex>
       <DonutChart
         className="mt-6"
@@ -42,7 +42,7 @@ export default function WaterCard() {
         index="name"
         colors={['cyan', 'slate']}
         valueFormatter={valueFormatter}
-        label='1050 mL'
+        label='1050 fl oz'
       />
       <Button className="mt-2" variant="secondary">Add Water</Button>
     </Card>

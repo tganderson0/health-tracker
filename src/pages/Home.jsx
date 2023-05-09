@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Card, Grid, Tab, TabList, Text, Title } from "@tremor/react";
+import { Grid, Tab, TabList, Text, Title } from "@tremor/react";
 
 import CalorieCard from "../components/CalorieCard";
 import WeightCard from "../components/WeightCard";
 import WaterCard from "../components/WaterCard";
 import CalorieDetails from "../components/CalorieDetails";
+import WaterDetails from "../components/WaterDetails";
 
 export default function Home() {
   const [selectedView, setSelectedView] = useState("1");
@@ -24,7 +25,7 @@ export default function Home() {
         <Tab value="4" text="Weight" />
       </TabList>
 
-      {selectedView === "1" ? (
+      {selectedView === "1" &&
         <>
           <Grid numColsLg={2} className="mt-6 gap-6">
             <CalorieCard />
@@ -35,9 +36,13 @@ export default function Home() {
             <WeightCard />
           </div>
         </>
-      ) : (
+      }
+      {selectedView === "2" &&
         <CalorieDetails />
-      )}
+      }
+      {selectedView === "3" &&
+        <WaterDetails />
+      }
     </main>
   );
 }
