@@ -11,11 +11,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      <div className='min-h-screen bg-slate-50'>
       <NavigationBar setMenuOpen={setMenuOpen}/>
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route path='*' element={<ErrorPage/>} />
       </Routes>
+      </div>
+
     </BrowserRouter>
   );
 }

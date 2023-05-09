@@ -2,10 +2,14 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  daisyui: {
+    themes: false,
+  },
+  plugins: [require('daisyui'), require('tailwind-scrollbar')({ nocompatible: true })],
 }
 
